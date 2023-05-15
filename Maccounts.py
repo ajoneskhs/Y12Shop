@@ -8,7 +8,7 @@ class Account:
 	def name(self,f:str,s:str):
     	self.f_name = f
     	self.s_name = s
-	def age (self, year:int):
+	def age (self, byear:int,cyear:str):
 		pass
 	def gender (self, gend:str):
 		pass
