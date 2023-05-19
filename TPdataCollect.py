@@ -1,10 +1,12 @@
-
+from Zdb import dbConnector
 class DataCollector:
   def __init__(self):
-    
-    pass
-  def recordEvent(self,orginModule, ip, instruction, isMajor):
-    from Zdb import databaseConnector
+    x = dbConnector()
+    self.connector = x.connect()
+
+  def recordEvent(self,originModule, ip, instruction, isMajor):
+    query = "INSERT INTO log (originModule, IP, instruction, isMajor) VALUES (%s, %s, %s, %i)"
+    self.connector.execute(query, (originModule,ip,instruction,isMajor))
 
     pass
 

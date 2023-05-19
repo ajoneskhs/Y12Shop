@@ -1,7 +1,7 @@
 # user first and last names
 #user age/gender
 #user addresses/ previous purchases
-
+from TPdataclooect import DataCollector
 class Account:
 	def __init__(self):
 		pass

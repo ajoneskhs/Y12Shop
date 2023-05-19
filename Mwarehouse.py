@@ -1,3 +1,4 @@
+from Zdb import dbConnector
 class Warehouse:
 	def __init__(self, warehouseadd):
 		W_location = warehouseadd
