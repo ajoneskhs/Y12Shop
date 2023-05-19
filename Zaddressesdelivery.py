@@ -6,8 +6,8 @@ class AddressFinder:
         self.connector = x.connect()
 
     def postcode2town(self, postcode: str):
-        results = self.connector.execute("SELECT * FROM postcodes WHERE postcode = '"+postcode+"'")
-        data = results.fetchall()
+        self.connector.execute("SELECT * FROM postcodes WHERE postcode = '"+postcode+"'")
+        data = self.connector.fetchall()
         for line in data:
             print(line)
 x = AddressFinder()
