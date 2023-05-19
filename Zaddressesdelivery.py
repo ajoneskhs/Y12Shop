@@ -1,14 +1,23 @@
+from Zdb import dbConnector
+
 class AddressFinder:
-    def __innit__(self):
-        pass
+    def __init__(self):
+        x = dbConnector()
+        self.connector = x.connect()
 
-    def postcode2list(self, postcode: str):
-        return ["11 nice ave", "12 nice ave", "13 nice ave"]
+    def postcode2town(self, postcode: str):
+        results = self.connector.execute("SELECT * FROM postcodes WHERE postcode = '"+postcode+"'")
+        data = results.fetchall()
+        for line in data:
+            print(line)
+x = AddressFinder()
+x.postcode2town("TW8")
 
-    def postcodeLocation(self, postcode: str):
-        return ["Richmond"]
 
 
+
+        
+    
 
 
 
