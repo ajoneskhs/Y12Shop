@@ -5,8 +5,13 @@ class DataCollector:
     self.connector = x.connect()
 
   def recordEvent(self,originModule, ip, instruction, isMajor):
-    query = "INSERT INTO log (originModule, IP, instruction, isMajor) VALUES (%s, %s, %s, %i)"
-    self.connector.execute(query, (originModule,ip,instruction,isMajor))
+    if isMajor:
+      isMajor = 1
+    else:
+      isMajor = 0
+    query = "INSERT INTO log (originModule, IP, instruction, isMajor) VALUES (%s, %s, %s, %s)"
+    self.connector.execute(query, (originModule,ip,instruction,isMajor,))
+    self.connector.commit()
 
     pass
 
