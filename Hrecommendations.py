@@ -10,8 +10,8 @@ class Recommend:
     def __init__(self):
         pass
 
-    def getCommonThemes(PreviouslyPurchased: list[str]):
+    def getCommonThemes(self, PreviouslyPurchased: list[str]):
         pass
 
-    def getSimilairProducts(SimilairProducts: list[str], PreviouslyPurchase: list[str]):
+    def getSimilairProducts(self, SimilairProducts: list[str], PreviouslyPurchased: list[str]):
         pass
