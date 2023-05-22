@@ -1,8 +1,8 @@
 from Zdb import dbConnector
 class DataCollector:
   def __init__(self):
-    x = dbConnector()
-    self.connector = x.connect()
+    self.db = dbConnector()
+    self.connector = self.db.connect()
 
   def recordEvent(self,originModule, ip, instruction, isMajor):
     if isMajor:
@@ -11,7 +11,7 @@ class DataCollector:
       isMajor = 0
     query = "INSERT INTO log (originModule, IP, instruction, isMajor) VALUES (%s, %s, %s, %s)"
     self.connector.execute(query, (originModule,ip,instruction,isMajor,))
-    self.connector.commit()
+    self.db.db.commit()
 
     pass
 
